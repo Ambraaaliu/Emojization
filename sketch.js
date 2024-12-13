@@ -19,7 +19,7 @@ let colors = ['#ffffff', '#fff7f9', '#fcfced', '#f7faff', '#f2f5f4','#f7edfc'];
 function setup() {
   background(255);
   
-  createCanvas(48, 32);
+  createCanvas(86, 64);
  
   capture = createCapture(VIDEO);
   
@@ -39,23 +39,26 @@ function setup() {
     });
   }
   instructionText1 = createP('Click buttons to see what will happen!');
-  instructionText1.position(10, startY + 500); // Position above the input box
+  instructionText1.position(10, startY + 500); 
   instructionText1.style('font-size', '14px');
-  instructionText1.style('width', '400px');
-  // text("Before click enter space, 'fn + E' to show emojis.");
-  // text.position(1350, startY + 180);
+  instructionText1.style('width', '200px');
+  
   instructionText2 = createP('Tip: Press "Fn + E" to open the emoji keyboard before typing:) Not all emojis are in the library, sorry. I hope you like this project, thx');
-
-  instructionText2.position(1300, startY + 80); // Position above the input box
+  instructionText2.position(1250, startY + 80); 
   instructionText2.style('font-size', '14px');
   emojiInput = createInput('').attribute('placeholder', 'Type your emojis here...');
-  emojiInput.position(1300, startY + 200);
+  emojiInput.position(1300, startY + 230);
   // emojiInput.size(300, 50);
 
   let submitButton = createButton('Submit Emojis');
-  submitButton.position(1300, startY + 230);
+  submitButton.position(1300, startY + 250);
   submitButton.mousePressed(submitEmojis);
   // submitButton.style('font-size', '18px');
+
+  instructionText3 = createP('Emojilization - Developer: Ambra Liu ');
+  instructionText3.position(550, 0); // Position above the input box
+  instructionText3.style('font-size', '14px');
+  
 }
 
 
