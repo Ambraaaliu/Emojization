@@ -38,13 +38,22 @@ function setup() {
       changeBackgroundColor(colors[i]);
     });
   }
+  instructionText1 = createP('Click buttons to see what will happen!');
+  instructionText1.position(10, startY + 500); // Position above the input box
+  instructionText1.style('font-size', '14px');
+  instructionText1.style('width', '400px');
+  // text("Before click enter space, 'fn + E' to show emojis.");
+  // text.position(1350, startY + 180);
+  instructionText2 = createP('Tip: Press "Fn + E" to open the emoji keyboard before typing:) Not all emojis are in the library, sorry. I hope you like this project, thx');
 
-  emojiInput = createInput('').attribute('placeholder', 'Type your emojis to telling a story');
-  emojiInput.position(1350, startY + 200);
+  instructionText2.position(1300, startY + 80); // Position above the input box
+  instructionText2.style('font-size', '14px');
+  emojiInput = createInput('').attribute('placeholder', 'Type your emojis here...');
+  emojiInput.position(1300, startY + 200);
   // emojiInput.size(300, 50);
 
   let submitButton = createButton('Submit Emojis');
-  submitButton.position(1350, startY + 230);
+  submitButton.position(1300, startY + 230);
   submitButton.mousePressed(submitEmojis);
   // submitButton.style('font-size', '18px');
 }
@@ -78,7 +87,7 @@ function submitEmojis() {
   // console.log(emojiGroups)
   toggleEmojiGroup(5);
   changeBackgroundColor(colors[5]);
-  // xx
+ 
 
 }
 
@@ -150,162 +159,6 @@ function getFaceData() {
 function toggleMirror() {
   mirror = !mirror;
 }
-
-// function mapColorToEmoji(r, g, b) {
-
-//   if (255 > r && r > 102 && 102 > g && g > 0 && 0 < b && b < 102) {
-//     return "🌹"; 
-//   } else if (254 < r && 255 > g && g > 0 && 153 > b && b > 0 ){
-//     return "🌸";
-//   } else if (255 > r && r > 102 && 0 < g && g < 50 && 0 < b && b < 50){
-//     return "🧸"; 
-//   } else if (204 > r && r > 51 && 255 > g && g > 102 && 0 < b && b < 153) {
-//     return "🥝";
-//   } else if (255 > r && r > 102 && 153 > g && g > 0 &&  255 > b && b > 102) {
-//     return "🦄";
-//   } else if (153 > r && r > 0 && 204 > g && g > 51 &&  255 > b && b > 102) {
-//     return "🫐";  
-//   } else if (102 > r && r > 0 && 255 > g && g > 102 && 102 < b && b < 255) {
-//     return "🍈";     
-//   } else if (224 > r && r > 32 && 224 > g && g > 32 &&  224 > b && b > 32 ) {
-//     return "💡";  
-//   } else if (255 > r && r > 204 && 255 > g && g > 204 &&  255 > b && b > 204) {
-//     return "🤍";
-//   } else {
-//     return "💩";
-//  }
-// }
-// function mapColorToEmoji(r, g, b) { //not using anymore
-//   // red colum
-//   if (r > 127 && g < 63 && b < 63) {
-//     return "🥀"; 
-//   } else if (r > 127 && g < 127 && b < 63) {
-//     return "🎒"; 
-//   } else if (r > 127 && g < 127 && b < 127) {
-//     return "🍄"; 
-//   } else if (r > 127 && g < 191 && b < 191) {
-//     return "🎀"; 
-
-//   // Orange colum
-//   } else if (r > 127 && g > 63 && b < 63) {
-//     return "🚪";  
-//   } else if (r > 127 && g > 127 && b < 127) {
-//     return "🧸";  
-//   } else if (r > 127 && g > 191 && b < 127) {
-//     return "🌅";  
-//   } else if (r > 127 && g > 191 && b < 191) {
-//     return "🗂️"; 
-
-//   // Yellow
-//   } else if (r > 127 && g > 127 && b < 63) {
-//     return "🪝"; 
-//   } else if (r > 191 && g > 191 && b < 127) {
-//     return "🎗️"; 
-//   } else if (r > 191 && g > 191 && b < 191) {
-//     return "🧽"; 
-//   } else if (r > 127 && g > 127 && b > 191) {
-//     return "💡"; 
-
-//   // 绿色
-//   } else if (r < 63 && g > 127 && b < 63) {
-//     return "🥦"; 
-//   } else if (r > 63 && r < 191 && g > 191 && b < 63) {
-//     return "🥒"; 
-//   } else if (r > 63 && r < 191 && g > 191 && b > 63) {
-//     return "🥝"; 
-//   } else if (r < 127 && g > 127 && b < 127) {
-//     return "🍈"; 
-
-//   // 蓝绿色
-//   } else if (r < 63 && g > 127 && b > 127) {
-//     return "🩱"; 
-//   } else if (r < 127 && g > 191 && b > 127) {
-//     return "🩴"; 
-//   } else if (r < 191 && g > 191 && b > 63) {
-//     return "👗";
-
-//   // 蓝色
-//   } else if (r < 127 && g < 127 && b > 127) {
-//     return "🧿"; 
-//   } else if (r < 191 && g < 191 && b > 191) {
-//     return "🫐"; 
-//   } else if (r > 63 && g < 63 && b > 127) {
-//     return "🦋"; 
-//   } else if (r > 63 && g < 63 && b < 191) {
-//     return "🗳️"; 
-
-//   // 紫色
-//   } else if (r < 191 && g < 63 && b > 127) {
-//     return "👾"; 
-//   } else if (r < 191 && g < 127 && b > 127) {
-//     return "😈"; 
-//   } else if (r < 127 && g < 127 && b > 191) {
-//     return "☂️"; 
-//   } else if (r < 191 && g < 191 && b > 63) {
-//     return "🦄"; 
-
-//   // 桃红色
-//   } else if (r > 127 && g < 127 && b > 127) {
-//     return "🎆"; 
-//   } else if (r > 191 && g < 127 && b > 127) {
-//     return "🍇"; 
-//   } else if (r > 191 && g < 127 && b > 63) {
-//     return "🌷"; 
-//   } else if (r > 191 && g < 63 && b > 127) {
-//     return "🌸"; 
-
-//   // 白色、黑色和灰色
-//   } else if (r > 191 && g > 191 && b > 191) {
-//     return "🤍"; 
-//   } else if (r < 96 && g < 96 && b < 96) {
-//     return "🖤"; 
-//   } else if (r > 96 && r < 192 && g > 96 && g < 192 && b > 96 && b < 192) {
-//     return "🪨";
-//   } else {
-//     return "❓"; 
-//   }
-// }
-
-// if (255 > r && r > 102 && 50 > g && g > 0 && 0 < b && b < 50) {
-  // if (255 > r && r > 102 && 50 > g && g > 0 && 0 < b && b < 50) {
-  //   return "🌹"; 
-  // } else if (254 < r && 153 > g && g > 0 && 153 > b && b > 0 ){
-  //   return "🌸";
-  // } else if (255 > r && r > 102 && 0 < g && g < 50 && 0 < b && b < 50){
-  //   return "🧸"; 
-  // } else if (204 > r && r > 51 && 255 > g && g > 102 && 0 < b && b < 153) {
-  //   return "🥝"; 
-  // } else if (153 > r && r > 0 && 255 > g && g > 102 && 0 < b && b < 153) {
-  //   return "🌵"; 
-  // } else if (153 > r && r > 0 && 255 > g && g > 102 && 51 < b && b < 204) {
-  //   return "🍈"; 
-  // } else if (153 > r && r > 0 && 255 > g && g > 102 &&  255 > b && b > 102) {
-  //   return "🗳️"; 
-  // } else if (153 > r && r > 0 && 204 > g && g > 51 &&  255 > b && b > 102) {
-  //   return "🫐"; 
-  // } else if (153 > r && r > 0 && 153 > g && g > 0 &&  255 > b && b > 102) {
-  //   return "🧿"; 
-  // } else if (204 > r && r > 51 && 153 > g && g > 0 &&  255 > b && b > 102) {
-  //   return "😈";   
-  // } else if (255 > r && r > 102 && 153 > g && g > 0 &&  255 > b && b > 102) {
-  //   return "🦄";
-  // } else if (255 > r && r > 102 && 153 > g && g > 0 &&  204 > b && b > 51) {
-  //   return "🌷"; 
-  // } else if (224 > r && r > 32 && 224 > g && g > 32 &&  224 > b && b > 32 ) {
-  //   return "💡";  
-  // } else if (255 > r && r > 204 && 255 > g && g > 204 &&  255 > b && b > 204) {
-  //   return "🤍";
-  // } else {
-  //   return "💎";
-  // }
-
-// 230, 30, 120  
-
-
-
-// let subset = [[249, 249, 249, "🥚"], [221, 121, 112, "🐽"],[139, 183, 26, "🐸"]]
-
-//let subset =  cityEmojis;
 
 function rgbDistance(r,g,b){
   let closestDist = 9999;
