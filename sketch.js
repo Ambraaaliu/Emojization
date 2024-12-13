@@ -19,11 +19,11 @@ let colors = ['#ffffff', '#fff7f9', '#fcfced', '#f7faff', '#f2f5f4','#f7edfc'];
 function setup() {
   background(255);
   
-  createCanvas(86, 64);
+  createCanvas(48, 32);
  
   capture = createCapture(VIDEO);
   
-  capture.size(86, 64);
+  capture.size(48, 32);
   capture.hide();
   
   // mirrorButton = createButton('Toggle Mirror');
