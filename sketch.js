@@ -55,7 +55,7 @@ function setup() {
   submitButton.mousePressed(submitEmojis);
   // submitButton.style('font-size', '18px');
 
-  instructionText3 = createP('Emojilization - Developer: Ambra Liu ');
+  instructionText3 = createP('Emojization - Developer: Ambra Liu ');
   instructionText3.position(600, 10); // Position above the input box
   instructionText3.style('font-size', '14px');
   
