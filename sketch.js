@@ -23,7 +23,7 @@ function setup() {
  
   capture = createCapture(VIDEO);
   
-  capture.size(48, 32);
+  capture.size(86, 64);
   capture.hide();
   
   // mirrorButton = createButton('Toggle Mirror');
@@ -56,7 +56,7 @@ function setup() {
   // submitButton.style('font-size', '18px');
 
   instructionText3 = createP('Emojilization - Developer: Ambra Liu ');
-  instructionText3.position(550, 0); // Position above the input box
+  instructionText3.position(600, 10); // Position above the input box
   instructionText3.style('font-size', '14px');
   
 }
